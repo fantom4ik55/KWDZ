@@ -92,3 +92,98 @@ history
 CREATE DATABASE Human_friends;
 
 ## 8. Создать таблицы с иерархией из диаграммы в БД
+![](./image/Task8-1.png)
+
+
+mysql> CREATE TABLE animal
+
+    -> (
+
+    -> Id INT AUTO_INCREMENT PRIMARY KEY, 
+
+    -> Class_name VARCHAR(20)
+
+    -> );
+
+
+
+
+
+mysql> INSERT INTO animal (Class_name)
+
+    -> VALUES ('вьючные'),
+
+    -> ('домашние');
+
+
+
+
+
+mysql> CREATE TABLE packed_animals
+
+    -> (
+
+    ->   Id INT AUTO_INCREMENT PRIMARY KEY,
+
+    ->     Genus_name VARCHAR (20),
+
+    ->     Class_id INT,
+
+    ->     FOREIGN KEY (Class_id) REFERENCES animal (Id) ON DELETE CASCADE ON UPDATE CASCADE
+
+    -> );
+
+
+
+
+
+mysql> INSERT INTO packed_animals (Genus_name, Class_id)
+
+    -> VALUES ('Лошади', 1),
+
+    -> ('Ослы', 1),  
+
+    -> ('Верблюды', 1);
+
+
+
+
+
+mysql> CREATE TABLE home_animals
+
+    ->  (
+
+    ->   Id INT AUTO_INCREMENT PRIMARY KEY,
+
+    ->     Genus_name VARCHAR (20),
+
+    ->     Class_id INT,
+
+    ->     FOREIGN KEY (Class_id) REFERENCES animal (Id) ON DELETE CASCADE ON UPDATE CASCADE
+
+    -> );
+
+
+
+
+
+mysql> INSERT INTO home_animals (Genus_name, Class_id)
+
+    -> VALUES ('Кошки', 2),
+
+    -> ('Собаки', 2),  
+
+    -> ('Хомяки', 2);
+
+mysql> USE Human_friends;
+
+ 
+
+mysql> SHOW TABLES;
+
+![](./image/Task8-2.png)
+
+## 9. Заполнить низкоуровневые таблицы именами(животных), командами которые они выполняют и датами рождения
+
+
+
