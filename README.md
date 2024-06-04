@@ -266,3 +266,12 @@ mysql> INSERT INTO donkeys (Name, Birthday, Commands, Genus_id)
 
     -> ('Фред', '2017-02-10', NULL, 2);
 
+## 10. Удалив из таблицы верблюдов, т.к. верблюдов решили перевезти в другой питомник на зимовку. Объединить таблицы лошади, и ослы в одну таблицу
+
+![](./image/Task10.png)
+
+mysql> SET SQL_SAFE_UPDATES = 0;
+mysql> DELETE FROM camels;
+mysql> SELECT Name, Birthday, Commands FROM horses
+
+    -> UNION SELECT  Name, Birthday, Commands FROM donkeys;
