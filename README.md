@@ -89,4 +89,6 @@ history
 
 ![](./image/Task7.png)
 
+CREATE DATABASE Human_friends;
+
 ## 8. Создать таблицы с иерархией из диаграммы в БД
