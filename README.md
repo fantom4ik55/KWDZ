@@ -366,3 +366,5 @@ mysql> SELECT h.Name, h.Birthday, h.Commands, pa.Genus_name, ya.Age_in_month
 ## 13.Создать класс с Инкапсуляцией методов и наследованием по диаграмме.
 
 
+#   K W D Z  
+ 
